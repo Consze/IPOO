@@ -4,18 +4,18 @@ function main()
 {
     $arreglo["malbec"] = array
                             (
-                                ["Año" => 1999, "Cantidad" => 25, "Precio" => 12000],
-                                ["Año" => 2019, "Cantidad" => 55, "Precio" => 320]
+                                ["Año" => 1999, "Cantidad" => 17, "Precio" => 5500],
+                                ["Año" => 2019, "Cantidad" => 202, "Precio" => 320]
                             );
     $arreglo["cabernet"] = array
                             (
-                                ["Año" => 2015, "Cantidad" => 25, "Precio" => 800],
-                                ["Año" => 2020, "Cantidad" => 55, "Precio" => 500]
+                                ["Año" => 2015, "Cantidad" => 32, "Precio" => 800],
+                                ["Año" => 2020, "Cantidad" => 550, "Precio" => 500]
                             );
     $arreglo["merlot"] = array
                             (
-                                ["Año" => 2016, "Cantidad" => 25, "Precio" => 3350],
-                                ["Año" => 2020, "Cantidad" => 55, "Precio" => 400]
+                                ["Año" => 2016, "Cantidad" => 40, "Precio" => 3350],
+                                ["Año" => 2020, "Cantidad" => 325, "Precio" => 400]
                             );
     $arregloDatos = calculos($arreglo);
     print_r($arregloDatos);
@@ -37,7 +37,7 @@ function calculos($arreglo)
             $cantidadTotal = $cantidadTotal + $arreglo[$variedad[$indice]][$contador]["Cantidad"];
             $acumuladorPrecio = $acumuladorPrecio + $arreglo[$variedad[$indice]][$contador]["Precio"];
         }
-        $promedioBotella = $acumuladorPrecio / $cantidadTotal;
+        $promedioBotella = round($acumuladorPrecio / $cantidadTotal);
         $arregloDatos[$variedad[$indice]] = ["Promedio" => $promedioBotella, "Cantidad" => $cantidadTotal];
         $cantidadTotal = 0;
         $acumuladorPrecio = 0;
